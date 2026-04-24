@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./banner.png" width="100%" alt="Akila Nilupul Banner" />
+  <img src="./animated-banner.svg" width="100%" alt="Akila Nilupul Animated Banner" />
   
   <br/>
   

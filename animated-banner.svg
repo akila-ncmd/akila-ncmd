@@ -1,0 +1,39 @@
+<svg width="1000" height="400" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@800&amp;display=swap');
+    .logo { font-family: 'Anton', sans-serif; font-size: 180px; filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5)); }
+    .hud { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.5em; fill: #FF0000; opacity: 0.4; }
+    
+    @keyframes pulse {
+      0%, 100% { stroke-opacity: 0.4; stroke-width: 2px; filter: drop-shadow(0 0 10px rgba(255,0,0,0.3)); }
+      50% { stroke-opacity: 1; stroke-width: 4px; filter: drop-shadow(0 0 40px rgba(255,0,0,0.8)); }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+    .anim-pulse { animation: pulse 3s infinite ease-in-out; }
+  </style>
+
+  <rect width="1000" height="400" fill="#0A0A0A"/>
+  
+  <!-- Subtle Grid Background -->
+  <path d="M0 100H1000M0 200H1000M0 300H1000M100 0V400M200 0V400M300 0V400M400 0V400M500 0V400M600 0V400M700 0V400M800 0V400M900 0V400" stroke="#FFFFFF" stroke-opacity="0.03"/>
+
+  <!-- The "AN" Logo -->
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" 
+        class="logo anim-pulse" stroke="#FF0000" fill="none" font-weight="900" font-style="italic">
+    AN
+  </text>
+
+  <!-- HUD Elements -->
+  <text x="50" y="50" class="hud">STATUS // ACTIVE</text>
+  <text x="50" y="360" class="hud">LMT // COLOMBO</text>
+  <text x="950" y="50" text-anchor="end" class="hud">REDACTED // 2026</text>
+  <text x="950" y="360" text-anchor="end" class="hud">CINEMATIC_MODE</text>
+
+  <!-- Animated Scanline -->
+  <rect width="1000" height="2" fill="#FF0000" fill-opacity="0.1">
+    <animateTransform attributeName="transform" type="translate" from="0,-100" to="0,400" dur="4s" repeatCount="indefinite" />
+  </rect>
+</svg>
