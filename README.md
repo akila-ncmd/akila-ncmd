@@ -61,12 +61,12 @@ I am a **Creative Developer** obsessed with the intersection of high-end aesthet
 
 ### 🔗 // CONNECT // PROTOCOL
 
-<div align="center">
-  <a href="https://www.linkedin.com/in/akila-nilupul-9189782b5?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=for-the-badge&logo=linkedin&logoColor=FF0000" /></a>
+<p align="left">
+  <a href="https://www.linkedin.com/in/akila-nilupul-9189782b5" target="_blank"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=for-the-badge&logo=linkedin&logoColor=FF0000" /></a>
   <a href="https://wa.me/94767479233?text=Hello%20Akila%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20inquire%20about%20your%20services." target="_blank"><img src="https://img.shields.io/badge/WHATSAPP-000000?style=for-the-badge&logo=whatsapp&logoColor=FF0000" /></a>
   <a href="mailto:akilanilupul3@gmail.com" target="_blank"><img src="https://img.shields.io/badge/EMAIL-000000?style=for-the-badge&logo=gmail&logoColor=FF0000" /></a>
-  <a href="https://www.facebook.com/share/171z9CRhHK/" target="_blank"><img src="https://img.shields.io/badge/FACEBOOK-000000?style=for-the-badge&logo=facebook&logoColor=FF0000" /></a>
-</div>
+  <a href="https://www.facebook.com/share/196CDcGtQ8/" target="_blank"><img src="https://img.shields.io/badge/FACEBOOK-000000?style=for-the-badge&logo=facebook&logoColor=FF0000" /></a>
+</p>
 
 ---
 
