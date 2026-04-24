@@ -66,7 +66,7 @@ I am a **Creative Developer** obsessed with the intersection of high-end aesthet
   <a href="https://wa.me/94767479233" target="_blank"><img src="https://img.shields.io/badge/WHATSAPP-000000?style=for-the-badge&logo=whatsapp&logoColor=FF0000" /></a>
   <a href="https://www.instagram.com/akilanilupul_" target="_blank"><img src="https://img.shields.io/badge/INSTAGRAM-000000?style=for-the-badge&logo=instagram&logoColor=FF0000" /></a>
   <a href="mailto:akilanilupul3@gmail.com" target="_blank"><img src="https://img.shields.io/badge/EMAIL-000000?style=for-the-badge&logo=gmail&logoColor=FF0000" /></a>
-  <a href="https://www.facebook.com/akilanilupul" target="_blank"><img src="https://img.shields.io/badge/FACEBOOK-000000?style=for-the-badge&logo=facebook&logoColor=FF0000" /></a>
+  <a href="https://www.facebook.com/akila.nilupul.724361" target="_blank"><img src="https://img.shields.io/badge/FACEBOOK-000000?style=for-the-badge&logo=facebook&logoColor=FF0000" /></a>
 </p>
 
 ---
