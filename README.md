@@ -46,7 +46,7 @@ I don't just build websites — I engineer **immersive digital experiences** tha
 | 📍 **Location** | Galle, Sri Lanka |
 | 💼 **Roles** | Full-Stack Dev · Web Developer · Front-End Engineer · AI/ML Engineer |
 | 📧 **Email** | akilanilupul3@gmail.com |
-| 🌐 **Portfolio** | [**akilanilupul.dev →**](https://akila-portfolio-ten.vercel.app/) |
+| 🌐 **Portfolio** | [**akilanilupul.dev →**](https://akila-portfolio.vercel.app/) |
 
 </div>
 
@@ -66,7 +66,7 @@ I don't just build websites — I engineer **immersive digital experiences** tha
 ### 🌐 // MY_PORTFOLIO
 
 <div align="left">
-  <a href="https://akila-portfolio-ten.vercel.app/" target="_blank">
+  <a href="https://akila-portfolio.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/🚀_VISIT_PORTFOLIO-akilanilupul.dev-FF0000?style=for-the-badge&labelColor=0A0A0A" />
   </a>
 </div>
