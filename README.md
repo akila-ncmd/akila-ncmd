@@ -40,8 +40,7 @@ I don't just build websites — I engineer **immersive digital experiences** tha
 
 <div align="left">
 
-| | |
-|:---|:---|
+
 | 🎓 **Degree** | BEng Hons Software Engineering — London Metropolitan University |
 | 📍 **Location** | Galle, Sri Lanka |
 | 💼 **Roles** | Full-Stack Dev · Web Developer · Front-End Engineer · AI/ML Engineer |
