@@ -164,10 +164,10 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 
 ---
 
-### 🏆 // GITHUB_TROPHIES
+### 🐍 // CONTRIBUTION_SNAKE
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=akila-ncmd&theme=darkhub&no-frame=false&no-bg=false&margin-w=8&margin-h=8&column=6&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C" />
+  <img src="https://raw.githubusercontent.com/akila-ncmd/akila-ncmd/output/github-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
 </div>
 
 ---
