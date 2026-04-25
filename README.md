@@ -32,7 +32,7 @@
 
 I'm a highly motivated **Software Engineering Graduate (BEng Hons)** from **London Metropolitan University**, specializing in **Full-Stack Web Development**, **Front-End Engineering**, and **AI/ML Systems**. Based in **Galle, Sri Lanka**.
 
-I don't just build websites — I engineer **immersive digital experiences** that demand attention. I architect performant web applications, craft intuitive interfaces, and integrate automated machine learning models to solve complex real-world problems with precision and clean logic.
+I don't just build websites, I engineer **immersive digital experiences** that demand attention. I architect performant web applications, craft intuitive interfaces, and integrate automated machine learning models to solve complex real-world problems with precision and clean logic.
 
 > *"Products that make clients say WOW."*
 
