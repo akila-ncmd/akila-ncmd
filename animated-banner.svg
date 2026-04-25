@@ -1,39 +1,97 @@
-<svg width="1000" height="400" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1000" height="400" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&amp;family=JetBrains+Mono:wght@800&amp;display=swap');
-    .logo { font-family: 'Anton', sans-serif; font-size: 180px; filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5)); }
-    .hud { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.5em; fill: #FF0000; opacity: 0.4; }
-    
-    @keyframes pulse {
-      0%, 100% { stroke-opacity: 0.4; stroke-width: 2px; filter: drop-shadow(0 0 10px rgba(255,0,0,0.3)); }
-      50% { stroke-opacity: 1; stroke-width: 4px; filter: drop-shadow(0 0 40px rgba(255,0,0,0.8)); }
+    .logo {
+      font-family: 'Arial Black', 'Arial', sans-serif;
+      font-size: 200px;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -8px;
     }
-    @keyframes scanline {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100%); }
+    .hud {
+      font-family: 'Courier New', 'Courier', monospace;
+      font-size: 13px;
+      letter-spacing: 0.4em;
+      fill: #FF0000;
+      opacity: 0.45;
+      font-weight: bold;
     }
-    .anim-pulse { animation: pulse 3s infinite ease-in-out; }
+    .hud-line {
+      stroke: #FF0000;
+      stroke-opacity: 0.2;
+      stroke-width: 1;
+    }
+
+    @keyframes neonPulse {
+      0%   { filter: drop-shadow(0 0 6px rgba(255,0,0,0.4)) drop-shadow(0 0 20px rgba(255,0,0,0.2)); stroke-opacity: 0.5; }
+      50%  { filter: drop-shadow(0 0 25px rgba(255,0,0,1)) drop-shadow(0 0 60px rgba(255,0,0,0.6)) drop-shadow(0 0 100px rgba(255,0,0,0.3)); stroke-opacity: 1; }
+      100% { filter: drop-shadow(0 0 6px rgba(255,0,0,0.4)) drop-shadow(0 0 20px rgba(255,0,0,0.2)); stroke-opacity: 0.5; }
+    }
+    @keyframes cornerBlink {
+      0%, 100% { opacity: 0.3; }
+      50%       { opacity: 1; }
+    }
+    @keyframes scanMove {
+      0%   { transform: translateY(0px); opacity: 0; }
+      5%   { opacity: 1; }
+      95%  { opacity: 1; }
+      100% { transform: translateY(400px); opacity: 0; }
+    }
+
+    .an-logo { animation: neonPulse 2.8s ease-in-out infinite; }
+    .corner-dot { animation: cornerBlink 1.5s ease-in-out infinite; }
+    .scan-line { animation: scanMove 5s linear infinite; }
   </style>
 
+  <!-- Background -->
   <rect width="1000" height="400" fill="#0A0A0A"/>
-  
-  <!-- Subtle Grid Background -->
-  <path d="M0 100H1000M0 200H1000M0 300H1000M100 0V400M200 0V400M300 0V400M400 0V400M500 0V400M600 0V400M700 0V400M800 0V400M900 0V400" stroke="#FFFFFF" stroke-opacity="0.03"/>
 
-  <!-- The "AN" Logo -->
-  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" 
-        class="logo anim-pulse" stroke="#FF0000" fill="none" font-weight="900" font-style="italic">
-    AN
-  </text>
+  <!-- Subtle dot grid -->
+  <pattern id="dotgrid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="0.8" fill="#FF0000" fill-opacity="0.12"/>
+  </pattern>
+  <rect width="1000" height="400" fill="url(#dotgrid)"/>
 
-  <!-- HUD Elements -->
-  <text x="50" y="50" class="hud">STATUS // ACTIVE</text>
-  <text x="50" y="360" class="hud">LMT // COLOMBO</text>
-  <text x="950" y="50" text-anchor="end" class="hud">REDACTED // 2026</text>
-  <text x="950" y="360" text-anchor="end" class="hud">CINEMATIC_MODE</text>
+  <!-- Corner brackets: top-left -->
+  <line x1="30" y1="30" x2="80" y2="30" class="hud-line" stroke-opacity="0.5"/>
+  <line x1="30" y1="30" x2="30" y2="80" class="hud-line" stroke-opacity="0.5"/>
+  <!-- Corner brackets: top-right -->
+  <line x1="970" y1="30" x2="920" y2="30" class="hud-line" stroke-opacity="0.5"/>
+  <line x1="970" y1="30" x2="970" y2="80" class="hud-line" stroke-opacity="0.5"/>
+  <!-- Corner brackets: bottom-left -->
+  <line x1="30" y1="370" x2="80" y2="370" class="hud-line" stroke-opacity="0.5"/>
+  <line x1="30" y1="370" x2="30" y2="320" class="hud-line" stroke-opacity="0.5"/>
+  <!-- Corner brackets: bottom-right -->
+  <line x1="970" y1="370" x2="920" y2="370" class="hud-line" stroke-opacity="0.5"/>
+  <line x1="970" y1="370" x2="970" y2="320" class="hud-line" stroke-opacity="0.5"/>
 
-  <!-- Animated Scanline -->
-  <rect width="1000" height="2" fill="#FF0000" fill-opacity="0.1">
-    <animateTransform attributeName="transform" type="translate" from="0,-100" to="0,400" dur="4s" repeatCount="indefinite" />
-  </rect>
+  <!-- Corner dots -->
+  <circle cx="30" cy="30" r="3" fill="#FF0000" class="corner-dot"/>
+  <circle cx="970" cy="30" r="3" fill="#FF0000" class="corner-dot" style="animation-delay:0.4s"/>
+  <circle cx="30" cy="370" r="3" fill="#FF0000" class="corner-dot" style="animation-delay:0.8s"/>
+  <circle cx="970" cy="370" r="3" fill="#FF0000" class="corner-dot" style="animation-delay:1.2s"/>
+
+  <!-- Center horizontal rule -->
+  <line x1="50" y1="200" x2="320" y2="200" class="hud-line"/>
+  <line x1="680" y1="200" x2="950" y2="200" class="hud-line"/>
+
+  <!-- The AN Logo — centered, scales with viewBox -->
+  <text
+    x="500"
+    y="255"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    class="logo an-logo"
+    stroke="#FF0000"
+    stroke-width="2"
+    fill="none"
+  >AN</text>
+
+  <!-- HUD Labels -->
+  <text x="50" y="55" class="hud">STATUS // ACTIVE</text>
+  <text x="50" y="368" class="hud">LMT // GALLE, SRI LANKA</text>
+  <text x="950" y="55" text-anchor="end" class="hud">REDACTED // 2026</text>
+  <text x="950" y="368" text-anchor="end" class="hud">SESSION // 02</text>
+
+  <!-- Animated scan line -->
+  <rect class="scan-line" x="0" y="0" width="1000" height="1.5" fill="#FF0000" fill-opacity="0.15"/>
 </svg>

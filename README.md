@@ -40,13 +40,13 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 
 <div align="left">
 
-| | |
+| DETAIL | INFO |
 |:---|:---|
 | 🎓 **Degree** | BEng Hons Software Engineering — London Metropolitan University |
 | 📍 **Location** | Galle, Sri Lanka |
 | 💼 **Roles** | Full-Stack Dev · Web Developer · Front-End Engineer · AI/ML Engineer |
 | 📧 **Email** | akilanilupul3@gmail.com |
-| 🌐 **Portfolio** | [**akilanilupul.dev →**](https://akila-portfolio.vercel.app/) |
+| 🌐 **Portfolio** | [**akilanilupul.dev →**](https://akila-portfolio-ten.vercel.app/) |
 
 </div>
 
@@ -167,7 +167,7 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 ### 🏆 // GITHUB_TROPHIES
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=akila-ncmd&theme=onedark&no-frame=true&no-bg=true&margin-w=4&column=7" />
+  <img src="https://github-profile-trophy.vercel.app/?username=akila-ncmd&theme=darkhub&no-frame=false&no-bg=false&margin-w=8&margin-h=8&column=6&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C" />
 </div>
 
 ---
@@ -175,11 +175,11 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 ### 🔗 // CONNECT // PROTOCOL
 
 <p align="left">
-  <a href="https://www.linkedin.com/in/akila-nilupul-9189782b5" target="_blank"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=for-the-badge&logo=linkedin&logoColor=FF0000" /></a>
-  <a href="https://wa.me/94767479233" target="_blank"><img src="https://img.shields.io/badge/WHATSAPP-000000?style=for-the-badge&logo=whatsapp&logoColor=FF0000" /></a>
-  <a href="https://www.instagram.com/akilanilupul_" target="_blank"><img src="https://img.shields.io/badge/INSTAGRAM-000000?style=for-the-badge&logo=instagram&logoColor=FF0000" /></a>
-  <a href="mailto:akilanilupul3@gmail.com" target="_blank"><img src="https://img.shields.io/badge/EMAIL-000000?style=for-the-badge&logo=gmail&logoColor=FF0000" /></a>
-  <a href="https://www.facebook.com/akila.nilupul.724361" target="_blank"><img src="https://img.shields.io/badge/FACEBOOK-000000?style=for-the-badge&logo=facebook&logoColor=FF0000" /></a>
+  <a href="https://www.linkedin.com/in/akila-nilupul-9189782b5" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://wa.me/94767479233" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+  <a href="https://www.instagram.com/akilanilupul_" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
+  <a href="mailto:akilanilupul3@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://www.facebook.com/akila.nilupul.724361" target="_blank"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" /></a>
 </p>
 
 ---
@@ -187,5 +187,5 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 <div align="center">
   <samp><b>LMT // GALLE, SRI LANKA</b> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <b>REDACTED // 2026</b></samp>
   <br/><br/>
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF0000&height=100&section=footer&text=CINEMATIC%20MODE&fontSize=20&fontAlignY=70&fontColor=ffffff" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF0000&height=80&section=footer" width="100%" />
 </div>
