@@ -164,13 +164,6 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 
 ---
 
-### 🐍 // CONTRIBUTION_SNAKE
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/akila-ncmd/akila-ncmd/output/github-snake-dark.svg" alt="Contribution Snake Animation" width="100%" />
-</div>
-
----
 
 ### 🔗 // CONNECT // PROTOCOL
 
