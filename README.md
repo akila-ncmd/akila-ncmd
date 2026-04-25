@@ -167,7 +167,7 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 ### 🏆 // GITHUB_TROPHIES
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=akila-ncmd&theme=onestar&no-frame=true&no-bg=true&margin-w=4&row=1" />
+  <img src="https://github-profile-trophy.vercel.app/?username=akila-ncmd&theme=onedark&no-frame=true&no-bg=true&margin-w=4&column=7" />
 </div>
 
 ---
@@ -187,5 +187,5 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 <div align="center">
   <samp><b>LMT // GALLE, SRI LANKA</b> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <b>REDACTED // 2026</b></samp>
   <br/><br/>
-  <img src="https://capsule-render.vercel.app/render?type=waving&color=FF0000&height=100&section=footer&text=CINEMATIC%20MODE&fontSize=20&fontAlignY=70" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF0000&height=100&section=footer&text=CINEMATIC%20MODE&fontSize=20&fontAlignY=70&fontColor=ffffff" width="100%" />
 </div>
