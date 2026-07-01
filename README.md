@@ -148,12 +148,12 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 ### 📊 // ANALYTICS // PERFORMANCE_METRICS
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=akila-ncmd&show_icons=true&theme=transparent&hide_border=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=00000000" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=akila-ncmd&layout=compact&theme=transparent&hide_border=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=00000000" height="170" />
+  <img src="https://github-readme-stats.vercel.app/api?username=akila-ncmd&show_icons=true&count_private=true&include_all_commits=true&hide_border=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0A0A0A&cache_seconds=1800" height="170" alt="Akila's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=akila-ncmd&layout=compact&hide_border=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0A0A0A&cache_seconds=1800" height="170" alt="Top Languages" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=akila-ncmd&theme=transparent&hide_border=true&ring=FF0000&fire=FF0000&currStreakLabel=FF0000" />
+  <img src="https://streak-stats.demolab.com/?user=akila-ncmd&hide_border=true&background=0A0A0A&ring=FF0000&fire=FF0000&currStreakLabel=FF0000&sideNums=FF0000&sideLabels=ffffff&dates=ffffff&stroke=FF0000&currStreakNum=ffffff&excludeDaysLabel=ffffff" alt="GitHub Streak" />
 </div>
 
 <br/>
