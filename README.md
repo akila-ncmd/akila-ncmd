@@ -148,8 +148,10 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 ### 📊 // ANALYTICS // PERFORMANCE_METRICS
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=akila-ncmd&show_icons=true&count_private=true&include_all_commits=true&hide_border=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0A0A0A&cache_seconds=1800" height="170" alt="Akila's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=akila-ncmd&layout=compact&hide_border=true&title_color=FF0000&icon_color=FF0000&text_color=ffffff&bg_color=0A0A0A&cache_seconds=1800" height="170" alt="Top Languages" />
+  <img src="./profile-summary-card-output/github_dark/3-stats.svg" alt="GitHub Stats" />
+  <img src="./profile-summary-card-output/github_dark/1-repos-per-language.svg" alt="Repos per language" />
+  <img src="./profile-summary-card-output/github_dark/2-most-commit-language.svg" alt="Most commit language" />
+  <img src="./profile-summary-card-output/github_dark/4-productive-time.svg" alt="Productive time" />
 </div>
 
 <div align="center">
