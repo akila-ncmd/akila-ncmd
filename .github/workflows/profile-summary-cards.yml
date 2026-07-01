@@ -22,3 +22,26 @@ jobs:
         with:
           USERNAME: ${{ github.repository_owner }}
           UTC_OFFSET: 5.5
+
+      - name: recolor github_dark cards to match README theme (#FF0000 on #0A0A0A)
+        run: |
+          set -eu
+          DIR=profile-summary-card-output/github_dark
+          [ -d "$DIR" ] || { echo "no cards dir; skipping recolor"; exit 0; }
+          for f in "$DIR"/*.svg; do
+            sed -i \
+              -e 's/#0d1117/#0A0A0A/gi' \
+              -e 's/#2e343b/#FF0000/gi' \
+              -e 's/#0366d6/#FF0000/gi' \
+              -e 's/#77909c/#ffffff/gi' \
+              "$f"
+          done
+          if [ -n "$(git status --porcelain "$DIR")" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "$DIR"
+            git commit -m "chore: recolor summary cards to red/black theme"
+            git push
+          else
+            echo "no color changes to commit"
+          fi

@@ -150,7 +150,6 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 <div align="center">
   <img src="./profile-summary-card-output/github_dark/1-repos-per-language.svg" height="200" alt="Repos per language" />
   <img src="./profile-summary-card-output/github_dark/2-most-commit-language.svg" height="200" alt="Most commit language" />
-  <img src="./profile-summary-card-output/github_dark/4-productive-time.svg" height="200" alt="Productive time" />
 </div>
 
 <div align="center">
