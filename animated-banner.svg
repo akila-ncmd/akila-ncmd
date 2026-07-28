@@ -88,8 +88,8 @@
 
   <!-- HUD Labels -->
   <text x="50" y="55" class="hud">STATUS // ACTIVE</text>
-  <text x="50" y="368" class="hud">LMT // GALLE, SRI LANKA</text>
-  <text x="950" y="55" text-anchor="end" class="hud">REDACTED // 2026</text>
+  <text x="50" y="368" class="hud">LMU // GALLE, SRI LANKA</text>
+  <text x="950" y="55" text-anchor="end" class="hud">SOFTWARE ENGINEER // 2026</text>
   <text x="950" y="368" text-anchor="end" class="hud">SESSION // 02</text>
 
   <!-- Animated scan line -->
