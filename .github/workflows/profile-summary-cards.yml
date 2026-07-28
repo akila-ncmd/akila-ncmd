@@ -1,12 +1,24 @@
 name: GitHub-Profile-Summary-Cards
 
+# Regenerates the two language cards embedded in README.md.
+#
+# NOTE ON THE TOKEN: the profile-details and stats cards need user-level GraphQL
+# scopes that the default GITHUB_TOKEN does not have — with it they fail with
+# "Resource not accessible by integration". Those two cards are not used by the
+# README, so they are pruned below and the run stays clean. If you ever want
+# them back, create a classic PAT with `read:user` + `repo`, save it as the
+# repo secret PROFILE_CARDS_TOKEN, and add them to KEEP.
+
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * 0" # weekly (Sun 00:00 UTC) — daily just churned the history
   workflow_dispatch:
-  push:
-    branches:
-      - main
+
+# Never let a manual run and the scheduled run race each other into a
+# non-fast-forward push.
+concurrency:
+  group: profile-summary-cards
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -16,18 +28,44 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_CARDS_TOKEN || secrets.GITHUB_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
           UTC_OFFSET: 5.5
+          THEME: github_dark # only theme the README uses; skips ~60 unused ones
+          AUTO_PUSH: false # we commit once, after recolouring
 
-      - name: recolor github_dark cards to match README theme (#FF0000 on #0A0A0A)
+      - name: Prune, recolour and commit
         run: |
-          set -eu
+          set -euo pipefail
           DIR=profile-summary-card-output/github_dark
-          [ -d "$DIR" ] || { echo "no cards dir; skipping recolor"; exit 0; }
+
+          if [ ! -d "$DIR" ]; then
+            echo "::error::card output directory is missing — the generator produced nothing"
+            exit 1
+          fi
+
+          # Keep only the cards README.md actually embeds.
+          KEEP="1-repos-per-language.svg 2-most-commit-language.svg"
+          for f in "$DIR"/*.svg; do
+            case " $KEEP " in
+              *" $(basename "$f") "*) ;;
+              *) rm -f "$f" ;;
+            esac
+          done
+
+          # Fail loudly rather than silently committing a half-empty card set.
+          for want in $KEEP; do
+            if [ ! -s "$DIR/$want" ]; then
+              echo "::error::$want was not generated (or is empty)"
+              exit 1
+            fi
+          done
+
+          # Recolour github_dark to the README's red/black theme.
           for f in "$DIR"/*.svg; do
             sed -i \
               -e 's/#0d1117/#0A0A0A/gi' \
@@ -36,12 +74,14 @@ jobs:
               -e 's/#77909c/#ffffff/gi' \
               "$f"
           done
-          if [ -n "$(git status --porcelain "$DIR")" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add "$DIR"
-            git commit -m "chore: recolor summary cards to red/black theme"
-            git push
-          else
-            echo "no color changes to commit"
+
+          if [ -z "$(git status --porcelain "$DIR")" ]; then
+            echo "cards unchanged; nothing to commit"
+            exit 0
           fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$DIR"
+          git commit -m "chore(cards): refresh profile summary cards"
+          git push
