@@ -48,12 +48,14 @@ jobs:
             exit 1
           fi
 
-          # Keep only the cards README.md actually embeds.
+          # Keep only the cards README.md actually embeds. Covers every file,
+          # not just *.svg — the generator also drops its own README.md in here.
           KEEP="1-repos-per-language.svg 2-most-commit-language.svg"
-          for f in "$DIR"/*.svg; do
+          for f in "$DIR"/*; do
+            [ -e "$f" ] || continue
             case " $KEEP " in
               *" $(basename "$f") "*) ;;
-              *) rm -f "$f" ;;
+              *) rm -rf "$f" ;;
             esac
           done
 
