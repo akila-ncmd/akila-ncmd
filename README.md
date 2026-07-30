@@ -159,7 +159,9 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 <br/>
 
 <div align="center">
-  <img src="./assets/activity-graph.svg" width="100%" alt="Contribution activity graph — daily contribution counts for the last 30 days" />
+  <a href="https://akila-ncmd.github.io/akila-ncmd/">
+    <img src="./assets/activity-graph.svg" width="100%" alt="Contribution activity graph — click to hover any day for its exact contribution count" />
+  </a>
 </div>
 
 ---
