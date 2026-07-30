@@ -5,13 +5,18 @@ Replaces the github-readme-activity-graph.vercel.app embed. Two reasons:
 
 1. That service prints no contribution values. It emits axis labels only and
    zero <title> nodes, so the counts were not readable and there was nothing
-   for a tooltip to show even in principle. GitHub serves README images
-   through its camo proxy inside an <img>, which makes the SVG's internal DOM
-   inert - no :hover, no <title> tooltips, no script. Hover is therefore not
-   achievable in a profile README at all, so the counts are drawn as
-   always-visible labels instead.
+   for a tooltip to show even in principle.
 
 2. Committing the result removes a third-party host from the page-view path.
+
+ON HOVER
+GitHub serves README images through its camo proxy inside an <img>, which
+makes the SVG's internal DOM inert - no :hover, no <title> tooltips, no
+script. Real hover is therefore impossible in a profile README no matter
+which service renders the graph. So this card stays deliberately clean (no
+per-point labels, --labels is opt-in) and links to docs/index.html, published
+on GitHub Pages, where the same data IS hoverable. --data-out writes the JSON
+that page reads.
 
 Contribution data comes from github-contributions-api.jogruber.de, which needs
 no auth. The GitHub GraphQL contributionsCollection query was not used on
@@ -86,7 +91,7 @@ def nice_ceiling(value: int) -> int:
     return -(-value // 1000) * 1000
 
 
-def build_svg(user_label: str, days: list[dict]) -> str:
+def build_svg(user_label: str, days: list[dict], labels: bool, hover_url: str | None) -> str:
     counts = [d["count"] for d in days]
     top = nice_ceiling(max(counts))
 
@@ -165,17 +170,23 @@ def build_svg(user_label: str, days: list[dict]) -> str:
             f'text-anchor="middle">{day}</text>'
         )
 
-        # Nudge the label below the point when it would clip the title band.
-        ly = py - 12 if py - 12 > PAD_T - 4 else py + 20
-        add(
-            f'<text x="{px:.1f}" y="{ly:.1f}" class="val" '
-            f'text-anchor="middle">{count}</text>'
-        )
+        if labels:
+            # Nudge the label below the point when it would clip the title band.
+            ly = py - 12 if py - 12 > PAD_T - 4 else py + 20
+            add(
+                f'<text x="{px:.1f}" y="{ly:.1f}" class="val" '
+                f'text-anchor="middle">{count}</text>'
+            )
 
     total = sum(counts)
+    caption = f"Days &#183; {total} contributions in the last {len(days)} days"
+    if hover_url:
+        # Hover cannot fire inside a README (see module docstring), so point
+        # readers at the page where it can.
+        caption += " &#183; click for per-day values"
     add(
         f'<text x="{W / 2:.1f}" y="{H - 16}" class="cap" text-anchor="middle">'
-        f"Days &#183; {total} contributions in the last {len(days)} days</text>"
+        f"{caption}</text>"
     )
     add("</svg>")
     return "".join(out)
@@ -187,19 +198,48 @@ def main() -> None:
     ap.add_argument("--label", default=None, help="name shown in the title")
     ap.add_argument("--days", type=int, default=30)
     ap.add_argument("--out", required=True)
+    ap.add_argument(
+        "--labels",
+        action="store_true",
+        help="print each day's count on the graph (off by default - the "
+        "README card is kept clean and links to the hover page instead)",
+    )
+    ap.add_argument(
+        "--hover-url",
+        default=None,
+        help="if set, the caption invites the reader to click through",
+    )
+    ap.add_argument(
+        "--data-out",
+        default=None,
+        help="also write the windowed data as JSON, for the hover page",
+    )
     args = ap.parse_args()
 
     if args.days < 2:
         raise SystemExit("--days must be at least 2")
 
     days = recent(fetch_contributions(args.user), args.days)
-    svg = build_svg(args.label or args.user, days)
+    svg = build_svg(args.label or args.user, days, args.labels, args.hover_url)
 
     with open(args.out, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(svg + "\n")
 
     shown = sum(d["count"] for d in days)
     print(f"wrote {args.out}: {len(days)} days, {shown} contributions")
+
+    if args.data_out:
+        payload = {
+            "user": args.user,
+            "label": args.label or args.user,
+            "generated": date.today().isoformat(),
+            "total": shown,
+            "days": [{"d": d["date"], "c": d["count"]} for d in days],
+        }
+        with open(args.data_out, "w", encoding="utf-8", newline="\n") as fh:
+            json.dump(payload, fh, separators=(",", ":"))
+            fh.write("\n")
+        print(f"wrote {args.data_out}: {len(days)} days")
 
 
 if __name__ == "__main__":
