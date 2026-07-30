@@ -1,0 +1,115 @@
+name: Profile-Metrics
+
+# Regenerates the two metric cards embedded in README.md:
+#   assets/streak.svg          - GitHub streak, fetched from streak-stats.demolab.com
+#   assets/activity-graph.svg  - contribution graph, rendered by scripts/render_activity_graph.py
+#
+# WHY THESE ARE COMMITTED RATHER THAN HOTLINKED
+# README.md used to embed both straight from third-party hosts, so every visitor
+# triggered a live request through GitHub's camo proxy. streak-stats.demolab.com
+# is a shared, rate-limited instance and was measured at 14s and 30s on two
+# consecutive calls - slow enough that camo times out and the card renders as a
+# broken image. Fetching in CI and committing the result means the README points
+# at a file in the repo, which cannot fail to load.
+#
+# FAILURE POLICY
+# A transient upstream outage must never replace a good card with a broken one.
+# Each card is written to a temp file and validated before it is moved into
+# place; if it cannot be produced, the step logs and leaves the committed file
+# untouched. The job only fails if BOTH cards fail, which means something real
+# is wrong rather than one flaky host.
+
+on:
+  schedule:
+    - cron: "20 2 * * *" # daily, 02:20 UTC (07:50 Asia/Colombo)
+  workflow_dispatch:
+
+# Never let a manual run and the scheduled run race each other into a
+# non-fast-forward push.
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: refresh profile metric cards
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Render activity graph
+        id: graph
+        run: |
+          set -uo pipefail
+          mkdir -p assets
+          if python scripts/render_activity_graph.py \
+              --user "${{ github.repository_owner }}" \
+              --label "Akila Nilupul" \
+              --days 30 \
+              --out assets/activity-graph.svg.new; then
+            mv assets/activity-graph.svg.new assets/activity-graph.svg
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            rm -f assets/activity-graph.svg.new
+            echo "::warning::activity graph could not be rendered; keeping the committed copy"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch streak card
+        id: streak
+        run: |
+          set -uo pipefail
+          mkdir -p assets
+          URL="https://streak-stats.demolab.com/?user=${{ github.repository_owner }}&hide_border=true&background=0A0A0A&ring=FF0000&fire=FF0000&currStreakLabel=FF0000&sideNums=FF0000&sideLabels=ffffff&dates=ffffff&stroke=FF0000&currStreakNum=ffffff&excludeDaysLabel=ffffff"
+          TMP=assets/streak.svg.new
+
+          ok=false
+          for attempt in 1 2 3 4; do
+            code=$(curl -sS --max-time 90 -o "$TMP" -w '%{http_code}' "$URL" || echo 000)
+
+            # A 200 alone is not enough - the host answers rate limits and
+            # errors with a 200 and an HTML or near-empty body.
+            if [ "$code" = "200" ] && [ -s "$TMP" ] \
+               && grep -q '<svg' "$TMP" && grep -q '</svg>' "$TMP" \
+               && [ "$(wc -c < "$TMP")" -gt 1000 ]; then
+              ok=true
+              break
+            fi
+
+            echo "attempt $attempt/4 rejected (http=$code, bytes=$(wc -c < "$TMP" 2>/dev/null || echo 0))"
+            sleep $((attempt * 10))
+          done
+
+          if [ "$ok" = true ]; then
+            mv "$TMP" assets/streak.svg
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            rm -f "$TMP"
+            echo "::warning::streak card unavailable upstream; keeping the committed copy"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fail only if nothing could be refreshed
+        if: steps.graph.outputs.ok == 'false' && steps.streak.outputs.ok == 'false'
+        run: |
+          echo "::error::both cards failed to refresh - this is not a single flaky host"
+          exit 1
+
+      - name: Commit refreshed cards
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain assets)" ]; then
+            echo "cards unchanged; nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git commit -m "chore(metrics): refresh streak and activity graph"
+          git push
