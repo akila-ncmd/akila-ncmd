@@ -153,13 +153,13 @@ I don't just build websites, I engineer **immersive digital experiences** that d
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=akila-ncmd&hide_border=true&background=0A0A0A&ring=FF0000&fire=FF0000&currStreakLabel=FF0000&sideNums=FF0000&sideLabels=ffffff&dates=ffffff&stroke=FF0000&currStreakNum=ffffff&excludeDaysLabel=ffffff" alt="GitHub Streak" />
+  <img src="./assets/streak.svg" alt="GitHub Streak" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=akila-ncmd&bg_color=0A0A0A&color=FF0000&line=FF0000&point=ffffff&area=true&hide_border=true" width="100%" alt="Contribution activity graph" />
+  <img src="./assets/activity-graph.svg" width="100%" alt="Contribution activity graph — daily contribution counts for the last 30 days" />
 </div>
 
 ---
