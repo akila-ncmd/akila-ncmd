@@ -43,21 +43,36 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Render activity graph
+      - name: Render activity graph and hover-page data
         id: graph
         run: |
           set -uo pipefail
-          mkdir -p assets
-          if python scripts/render_activity_graph.py \
-              --user "${{ github.repository_owner }}" \
-              --label "Akila Nilupul" \
-              --days 30 \
-              --out assets/activity-graph.svg.new; then
+          mkdir -p assets docs
+
+          # The README card is the clean 30-day view with no per-point labels;
+          # the hover page gets a full year so its range buttons have data.
+          ok=true
+          python scripts/render_activity_graph.py \
+            --user "${{ github.repository_owner }}" \
+            --label "Akila Nilupul" \
+            --days 30 \
+            --hover-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" \
+            --out assets/activity-graph.svg.new || ok=false
+
+          python scripts/render_activity_graph.py \
+            --user "${{ github.repository_owner }}" \
+            --label "Akila Nilupul" \
+            --days 365 \
+            --out /tmp/discard.svg \
+            --data-out docs/contributions.json.new || ok=false
+
+          if [ "$ok" = true ]; then
             mv assets/activity-graph.svg.new assets/activity-graph.svg
+            mv docs/contributions.json.new docs/contributions.json
             echo "ok=true" >> "$GITHUB_OUTPUT"
           else
-            rm -f assets/activity-graph.svg.new
-            echo "::warning::activity graph could not be rendered; keeping the committed copy"
+            rm -f assets/activity-graph.svg.new docs/contributions.json.new
+            echo "::warning::activity graph could not be rendered; keeping the committed copies"
             echo "ok=false" >> "$GITHUB_OUTPUT"
           fi
 
@@ -104,12 +119,12 @@ jobs:
       - name: Commit refreshed cards
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain assets)" ]; then
+          if [ -z "$(git status --porcelain assets docs)" ]; then
             echo "cards unchanged; nothing to commit"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets
+          git add assets docs
           git commit -m "chore(metrics): refresh streak and activity graph"
           git push
