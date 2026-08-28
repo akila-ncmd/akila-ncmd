@@ -13,7 +13,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Anton&weight=900&size=36&pause=1000&color=FF0000&center=true&vCenter=true&width=800&height=80&lines=FULL-STACK+DEVELOPER;WEB+DEVELOPER;FRONT-END+ENGINEER;AI+%2F+ML+ENGINEER;PRODUCTS+THAT+MAKE+CLIENTS+SAY+WOW" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Anton&weight=900&size=36&pause=1000&color=FF0000&center=true&vCenter=true&width=800&height=80&lines=FULL-STACK+DEVELOPER;WEB+DEVELOPER;FRONT-END+ENGINEER;AI+%2F+ML+ENGINEER;PRODUCTS+THAT+MAKE+CLIENTS+SAY+WOW" alt="Typing SVG" />
 </div>
 
 <br/>
