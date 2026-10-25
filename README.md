@@ -45,7 +45,7 @@ I ship end to end: storefront to vendor dashboard to Android build to production
 | 💼 **Now** | Software Engineer (AI & Full-Stack) @ **Zonova Tech** · Technical Expert @ **UNEP-CCC** |
 | 🎓 **Degree** | BEng (Hons) Software Engineering — London Metropolitan University · **2:1** |
 | 🏆 **Awards** | 2× national winner, BestWeb.lk 2026 (LK Domain Registry) |
-| 📄 **Research** | *AI-Powered Dental Prosthetic and Recommendation System* — accepted, EICON 2026 |
+| 📄 **Research** | *AI-Powered Dental Prosthetic and Recommendation System* — **Published**, EICON 2026 (DOI: [10.5281/zenodo.23612738](https://doi.org/10.5281/zenodo.23612738)) |
 | 📍 **Location** | Galle, Sri Lanka — open to international & remote roles |
 | 📧 **Email** | akilanilupul3@gmail.com |
 | 🌐 **Portfolio** | [**akila-portfolio.vercel.app →**](https://akila-portfolio.vercel.app/) |
@@ -60,7 +60,7 @@ I ship end to end: storefront to vendor dashboard to Android build to production
   <img src="https://img.shields.io/badge/PROJECTS_SHIPPED-13-FF0000?style=for-the-badge&labelColor=0A0A0A" alt="Projects shipped: 13" />
   <img src="https://img.shields.io/badge/LIVE_PRODUCTS-12-FF0000?style=for-the-badge&labelColor=0A0A0A" alt="Live products: 12" />
   <img src="https://img.shields.io/badge/NATIONAL_AWARDS-2-FF0000?style=for-the-badge&labelColor=0A0A0A" alt="National awards: 2" />
-  <img src="https://img.shields.io/badge/PAPERS_ACCEPTED-1-FF0000?style=for-the-badge&labelColor=0A0A0A" alt="Papers accepted: 1" />
+  <img src="https://img.shields.io/badge/PAPERS_PUBLISHED-1-FF0000?style=for-the-badge&labelColor=0A0A0A" alt="Papers published: 1" />
   <img src="https://img.shields.io/badge/LINES_SHIPPED-86K-FF0000?style=for-the-badge&labelColor=0A0A0A" alt="Lines shipped: 86K" />
 </div>
 
@@ -93,11 +93,33 @@ I ship end to end: storefront to vendor dashboard to Android build to production
 
 ### 🔬 // RESEARCH // PEER_REVIEWED
 
-**AI-Powered Dental Prosthetic and Recommendation System** · Paper `FPC10` · **Accepted — oral presentation**
-*ESOFT International Conference 2026 (EICON 2026), ESOFT University, Kandy* · presented 30 Aug 2026
+**AI-Powered Dental Prosthetic and Recommendation System** · Paper `FPC10` · **Published — Oral Presentation**  
+*Proceedings of the ESOFT International Conference 2026 (EICON 2026), Vol. 1, pp. 36–43*  
+*ESOFT University, Kandy, Sri Lanka · ISSN: 3121-5122 · ISBN: 978-624-6610-01-2*
 
 <div align="left">
-  <img src="https://img.shields.io/badge/STATUS-ACCEPTED-FF0000?style=flat-square&labelColor=0A0A0A" alt="Status: accepted" />
+  <a href="https://doi.org/10.5281/zenodo.23612738" target="_blank">
+    <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23612738-blue?style=flat-square&logo=doi&logoColor=white" alt="DOI: 10.5281/zenodo.23612738" />
+  </a>
+  <a href="https://akila-portfolio.vercel.app/AI-Powered-Dental-Prosthetic-and-Recommendation-System.pdf" target="_blank">
+    <img src="https://img.shields.io/badge/%F0%9F%93%84_READ_PAPER-PDF-FF0000?style=flat-square&labelColor=0A0A0A" alt="Read paper PDF" />
+  </a>
+  <a href="https://www.researchgate.net/publication/416764853_AI-Powered_Dental_Prosthetic_and_Recommendation_System" target="_blank">
+    <img src="https://img.shields.io/badge/ResearchGate-Publication-00CCBB?style=flat-square&logo=researchgate&logoColor=white" alt="ResearchGate" />
+  </a>
+  <a href="https://scholar.google.com/citations?user=SRZOPaMAAAAJ" target="_blank">
+    <img src="https://img.shields.io/badge/Google_Scholar-Profile-4285F4?style=flat-square&logo=googlescholar&logoColor=white" alt="Google Scholar" />
+  </a>
+  <a href="https://github.com/akila-ncmd/AI-Powered-Dental-Prosthetic-and-Recommendation-System" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Code_Repository-181717?style=flat-square&logo=github&logoColor=white" alt="Code Repository" />
+  </a>
+</div>
+
+<br/>
+
+<div align="left">
+  <img src="https://img.shields.io/badge/STATUS-PUBLISHED-FF0000?style=flat-square&labelColor=0A0A0A" alt="Status: published" />
+  <img src="https://img.shields.io/badge/VENUE-EICON_2026-FF0000?style=flat-square&labelColor=0A0A0A" alt="Venue: EICON 2026" />
   <img src="https://img.shields.io/badge/PEER_REVIEW-2_REVIEWERS-FF0000?style=flat-square&labelColor=0A0A0A" alt="Peer review: 2 reviewers" />
   <img src="https://img.shields.io/badge/RADIOGRAPHS-16%2C995-FF0000?style=flat-square&labelColor=0A0A0A" alt="Radiographs: 16,995" />
   <img src="https://img.shields.io/badge/CLASSES-10-FF0000?style=flat-square&labelColor=0A0A0A" alt="Condition classes: 10" />
@@ -223,7 +245,7 @@ Commercial dental AI reads radiographs and marks pathology — it doesn't say wh
 | `06` | **[Gimhani Tours](https://gimhani-tours.com/)** | WEB / TOURISM | Next.js 14 · TS · Static export · SEO | `[ LIVE ]` |
 | `07` | **[Lumina Frame](https://photographic-website-blond.vercel.app/)** | WEB / PHOTOGRAPHY | Next.js · GSAP · Framer Motion · TS | `[ LIVE ]` |
 | `08` | **[Aura Academic Agent](https://aknilupul-aura-acadamic-agent.hf.space/)** | AI / CONVERSATIONAL | Python · FastAPI · Gemini · ChromaDB | `[ LIVE ]` |
-| `09` | **[Dental AI Pro](https://aknilupul-dentalai-platform.hf.space/)** — 📄 EICON 2026 | AI / HEALTHCARE | FastAPI · YOLOv8 · OpenCV · MongoDB | `[ LIVE ]` |
+| `09` | **[Dental AI Pro](https://aknilupul-dentalai-platform.hf.space/)** · [Paper](https://doi.org/10.5281/zenodo.23612738) · [`src`](https://github.com/akila-ncmd/AI-Powered-Dental-Prosthetic-and-Recommendation-System) — 📄 EICON 2026 | AI / HEALTHCARE | FastAPI · YOLOv8 · OpenCV · MongoDB | `[ LIVE ]` |
 | `10` | **[Diamond Shine](https://github.com/akila-ncmd/Hotel-System)** | WEB / HOSPITALITY SYSTEMS | Laravel 10 · PHP 8.1 · MySQL · PHPUnit | `[ ARCHIVED ]` |
 | `11` | **[EatBest](https://restaurant-website-nu-nine.vercel.app)** · [`src`](https://github.com/akila-ncmd/Restaurant-Website) | WEB / RESTAURANT | Next.js 16 · React 19 · R3F · Tailwind v4 | `[ LIVE ]` |
 | `12` | **[EVC](https://evc-mobile-app.vercel.app)** · [`src`](https://github.com/akila-ncmd/EVC-Mobile-App) | MOBILE / STREAMING | Flutter · Dart · Riverpod · Adobe XD | `[ LIVE ]` |
@@ -267,6 +289,8 @@ Commercial dental AI reads radiographs and marks pathology — it doesn't say wh
 
 <p align="left">
   <a href="https://akila-portfolio.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-FF0000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://scholar.google.com/citations?user=SRZOPaMAAAAJ" target="_blank"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar" /></a>
+  <a href="https://www.researchgate.net/publication/416764853_AI-Powered_Dental_Prosthetic_and_Recommendation_System" target="_blank"><img src="https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" alt="ResearchGate" /></a>
   <a href="https://www.linkedin.com/in/akila-nilupul-9189782b5" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjUgMHoiLz48L3N2Zz4%3D&logoColor=white" alt="LinkedIn" /></a>
   <a href="https://wa.me/94767479233" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" /></a>
   <a href="mailto:akilanilupul3@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
